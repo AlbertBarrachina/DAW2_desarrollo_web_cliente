@@ -32,10 +32,10 @@ function ProductosOrdenados() {
 //ejercicio 2
 
 class Persona {
-    Nombre: string;
-    Edad: number;
-    Dni: string;
-    Domicilio: string;
+    private Nombre: string;
+    private Edad: number;
+    private Dni: string;
+    private Domicilio: string;
     constructor(nombre: string = "", edad: number = 0, dni: string = "", domicilio: string = "") {
         this.Nombre = nombre;
         this.Edad = edad;
@@ -81,8 +81,8 @@ console.log(persona2.MostrarInfo());
 //ejercicio 3
 
 class Cafetera {
-    Capacidad_maxima: number;
-    Cantidad_actual: number;
+    private Capacidad_maxima: number;
+    private Cantidad_actual: number;
     constructor(maxima: number = 1000, actual: number = 0) {
         this.Capacidad_maxima = maxima;
         this.Cantidad_actual = actual;
@@ -126,3 +126,6 @@ class Cafetera {
         }
     }
 }
+
+
+//
