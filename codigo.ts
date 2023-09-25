@@ -36,11 +36,11 @@ class Persona {
     Edad: number;
     Dni: string;
     Domicilio: string;
-    constructor(nombre: string = "", edad: number = 0, dni: string = "", domicilio: string = "") { 
-        this.Nombre=nombre;
-        this.Edad=edad;
-        this.Dni=dni;
-        this.Domicilio=domicilio;
+    constructor(nombre: string = "", edad: number = 0, dni: string = "", domicilio: string = "") {
+        this.Nombre = nombre;
+        this.Edad = edad;
+        this.Dni = dni;
+        this.Domicilio = domicilio;
     };
     //getters
     get nombre(): string {
@@ -77,3 +77,52 @@ const persona2 = new Persona("María García", 25, "98765432Y", "Avenida Secunda
 
 console.log(persona1.MostrarInfo());
 console.log(persona2.MostrarInfo());
+
+//ejercicio 3
+
+class Cafetera {
+    Capacidad_maxima: number;
+    Cantidad_actual: number;
+    constructor(maxima: number = 1000, actual: number = 0) {
+        this.Capacidad_maxima = maxima;
+        this.Cantidad_actual = actual;
+    }
+    //getters
+    get maxima(): number {
+        return this.Capacidad_maxima;
+    }
+    get actual(): number {
+        return this.Cantidad_actual;
+    }
+    //setters
+    set maxima(maxima: number) {
+        this.Capacidad_maxima = maxima;
+    }
+    set actual(actual: number) {
+        this.Cantidad_actual = actual;
+    }
+
+    Llenar_Cafetera(): void {
+        this.Cantidad_actual = this.Capacidad_maxima;
+    }
+
+    Servir_Taza(cantidad: number): void {
+        if (this.Cantidad_actual - cantidad < 0) {
+            this.Cantidad_actual - cantidad;
+        } else {
+            console.log(`No hay tanto cafe, te aguantas con ${this.Cantidad_actual}ml`);
+            this.Vaciar_Taza;
+        }
+    }
+
+    Vaciar_Taza(): void {
+        this.Cantidad_actual = 0;
+    }
+
+    Agregar_Cafe(cantidad: number): void {
+        this.Cantidad_actual - cantidad;
+        if (this.Cantidad_actual > this.Capacidad_maxima) {
+            this.Cantidad_actual = this.Capacidad_maxima;
+        }
+    }
+}
