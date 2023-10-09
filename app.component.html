@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de personaje</title>
+  <style>
+    form {
+      align-content: flex;
+    }
+
+    .numero {
+      width: 30px;
+      margin: 5px;
+    }
+
+    .ficha {
+      position: absolute;
+      left: 300px;
+      top: 0%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Ficha de personaje</h1>
+  <form>
+    <label for="nombre">Nombre: </label>
+    <input type="text" id="nombre" [value]="_nombre"><br>
+    <label for="fuerza">Fuerza: </label>
+    <input type="number" id="fuerza" class="numero" [value]="_num1" readonly><br>
+    <label for="destreza">Destreza: </label>
+    <input type="number" id="destreza" class="numero" [value]="_num2" readonly><br>
+    <label for="inteligencia">Inteligencia: </label>
+    <input type="number" id="inteligencia" class="numero" [value]="_num3" readonly><br>
+    <label for="constitucion">Constitucion: </label>
+    <input type="number" id="constitucion" class="numero" [value]="_num4" readonly><br>
+    <button id="generar" (click)="generarPersonaje()">Generar</button><br>
+    <button id="guardar" (click)="guardarPersonaje()">Guardar</button>
+  </form>
+
+  <div class="ficha">
+    <h1>Persoanje guardado</h1>
+    <label for="nombre">Nombre: </label>
+    <input type="text" id="nombre" [value]="_nombre2" readonly><br>
+    <label for="fuerza">Fuerza: </label>
+    <input type="number" id="fuerza" class="numero" [value]="_num12" readonly><br>
+    <label for="destreza">Destreza: </label>
+    <input type="number" id="destreza" class="numero" [value]="_num22" readonly><br>
+    <label for="inteligencia">Inteligencia: </label>
+    <input type="number" id="inteligencia" class="numero" [value]="_num32" readonly><br>
+    <label for="constitucion">Constitucion: </label>
+    <input type="number" id="constitucion" class="numero" [value]="_num42" readonly><br>
+  </div>
+
+</body>
+
+</html>
