@@ -1,0 +1,31 @@
+<div class="card-container">
+  <div class="card" *ngFor="let personaje of serverCharacters">
+    <!-- Aquí va toda la información del character para que se vea en formato Card -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" [value]="personaje.name" [(ngModel)]="personaje.name"
+      [readonly]="!personaje.editable">
+      <!--Parte que se oculta o apareze al pulsar el ultimo boton-->
+    <div *ngIf="personaje.visible == true">
+      <label for="strength">Strength:</label><br>
+      <input type="text" id="strength" [value]="personaje.strength" [(ngModel)]="personaje.strength"
+        [readonly]="!personaje.editable"><br>
+      <label for="agility">Agility:</label><br>
+      <input type="text" id="agility" [value]="personaje.agility" [(ngModel)]="personaje.agility"
+        [readonly]="!personaje.editable"><br>
+      <label for="inteligence">Inteligence:</label><br>
+      <input type="text" id="inteligence" [value]="personaje.intelligence" [(ngModel)]="personaje.intelligence"
+        [readonly]="!personaje.editable"><br>
+      <label for="life">Life:</label><br>
+      <input type="text" id="life" [value]="personaje.life" [(ngModel)]="personaje.life"
+        [readonly]="!personaje.editable"><br>
+      <input type="button" [value]="personaje.editable ? 'Save' : 'Edit'" (click)="ToggleEdit(personaje)">
+    </div>
+    <input type="button" [value]="personaje.visible ? 'Hide' : 'Show'" (click)="ToggleVisible(personaje)">
+  </div>
+
+  <!-- Dentro del parágrafo va la información del Character que se está modifcando -->
+  <p>
+    {{character_info}}
+  </p>
+
+</div>
