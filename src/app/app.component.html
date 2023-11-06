@@ -1,0 +1,10 @@
+<div class="card-container">
+  <div class="card" *ngFor="let imagen of fotos; index as i; ">
+    <img [src]="imagen.getImg">
+    <button (click)="imagen.changeLock()" class="candado-pequeno">
+      <img src="../assets/lock-closed.png" *ngIf="imagen.locked">
+      <img src="../assets/lock-open.png" *ngIf="!imagen.locked">
+    </button>
+  </div>
+
+</div>
