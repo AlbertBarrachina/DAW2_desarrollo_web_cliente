@@ -1,0 +1,30 @@
+<div class="card-container">
+  <div class="card" *ngFor="let personaje of personajes">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [value]="personaje.getnombre">
+    <!--atributos del personaje, se el GM no te deja inventarlos-->
+    <label for="comunicacion">Comunicacion:</label><br>
+    <input type="text" id="comunicacion" [value]="personaje.getcomunicacion" readonly><br>
+    <label for="constitucion">Constitucion:</label><br>
+    <input type="text" id="constitucion" [value]="personaje.getconstitucion" readonly><br>
+    <label for="astucia">Astucia:</label><br>
+    <input type="text" id="astucia" [value]="personaje.getastucia" readonly><br>
+    <label for="destreza">Destreza:</label><br>
+    <input type="text" id="destreza" [value]="personaje.getdestreza" readonly><br>
+    <label for="magia">Magia:</label><br>
+    <input type="text" id="magia" [value]="personaje.getmagia" readonly><br>
+    <label for="percepcion">Percepcion:</label><br>
+    <input type="text" id="percepcion" [value]="personaje.getpercepcion" readonly><br>
+    <label for="fuerza">Fuerza:</label><br>
+    <input type="text" id="fuerza" [value]="personaje.getfuerza" readonly><br>
+    <label for="voluntad">Voluntad:</label><br>
+    <input type="text" id="voluntad" [value]="personaje.getvoluntad" readonly><br>
+
+    <input type="button" id="generar" name="generar" value="generar" (click)="personaje.generar()">
+    <input type="button" id="reiniciar" name="reiniciar" value="reiniciar" (click)="personaje.reiniciar()">
+    <p>
+      {{personaje.info}}
+    </p>
+  </div>
+
+</div>
