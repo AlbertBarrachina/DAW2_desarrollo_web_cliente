@@ -1,0 +1,39 @@
+<div class="nombres">
+    <b>
+        <span class="nacionall">
+            Festiu Nacional
+        </span>
+    </b>
+    <b>
+        <span class="regionall">
+            Festiu Regional
+        </span>
+    </b>
+    <b>
+        <span class="locall">
+            Festiu Local
+        </span>
+    </b>
+    <b>
+        <span class="centree">
+            Festiu Centre
+        </span>
+    </b>
+
+</div>
+<div class="meses">
+    <div class="mes">
+        <b>Septiembre</b>
+        <div class="grid-container">
+            <div class="dia" *ngfor="let dia of diasNombres"><p>{{dia}}</p></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="mes">
+        <b>Octubre</b>
+        <div class="grid-container">
+            <div class="dia" *ngfor="let dia of diasNombres">{{dia}}</div>
+            <div></div>
+        </div>
+    </div>
+</div>
