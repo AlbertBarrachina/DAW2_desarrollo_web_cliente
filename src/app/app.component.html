@@ -1,0 +1,66 @@
+<div class="botones">
+    <form action="">
+        <select name="direccion">
+            <option value="">--</option>
+            <option *ngFor="let direccion of direcciones" [value]="direccion">{{ direccion }}</option>
+        </select>
+    </form>
+</div>
+<div class="contenido">
+
+    <h1>Proximos eventos</h1>
+    <div class="resultados">
+        
+        <div *ngFor="let evento of eventos">
+            <div class="resultado" *ngIf="isEventPassed(evento)">
+                <div *ngIf="evento.titulo">
+                    <h2>
+                        {{evento.titulo}}
+                    </h2>
+                </div>
+                <div *ngIf="evento.artista">
+                    <h3>
+                        {{evento.artista}}
+                    </h3>
+                </div>
+                <div *ngIf="evento.direccion">
+                    {{evento.direccion}}
+                </div>
+                <div *ngIf="evento.fecha">
+                    {{evento.fecha}}
+                </div>
+                <div *ngIf="evento.precio">
+                    {{evento.precio}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Eventos pasados</h1>
+    <div class="resultados">
+
+        <div *ngFor="let evento of eventos">
+            <div class="resultado" *ngIf="!isEventPassed(evento)">
+                <div *ngIf="evento.titulo">
+                    <h2>
+                        {{evento.titulo}}
+                    </h2>
+                </div>
+                <div *ngIf="evento.artista">
+                    <h3>
+                        {{evento.artista}}
+                    </h3>
+                </div>
+                <div *ngIf="evento.direccion">
+                    {{evento.direccion}}
+                </div>
+                <div *ngIf="evento.fecha">
+                    {{evento.fecha}}
+                </div>
+                <div *ngIf="evento.precio">
+                    {{evento.precio}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
