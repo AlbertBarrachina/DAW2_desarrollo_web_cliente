@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   eventos: Evento[] = [];
   direcciones: String[] = [];
+  selectedDireccion: string = '';
   ngOnInit() {
     // Cargamos el fichero JSON
     const json: any = data;
@@ -27,7 +28,7 @@ export class AppComponent implements OnInit {
   //comprueba si el evento ha pasado o esta por pasar
   isEventPassed(evento: any): boolean {
     const fechaActual = new Date();
-    return evento.fecha < fechaActual;
+    return evento.fecha > fechaActual;
   }
 
   //obtiene una lista de direcciones donde hay eventos
@@ -39,6 +40,12 @@ export class AppComponent implements OnInit {
     });
   
     return Array.from(direccionesUnicas);
+  }
+
+  get eventosFiltrados() {
+    return this.selectedDireccion
+      ? this.eventos.filter(evento => evento.direccion === this.selectedDireccion)
+      : this.eventos;
   }
 
  }
