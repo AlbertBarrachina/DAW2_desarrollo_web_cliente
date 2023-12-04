@@ -1,0 +1,21 @@
+<label for="filtro">Filtrar por direccion: </label>
+<br>
+<select [(ngModel)]="filtro" name="filtro">
+  <option></option>
+  <option *ngFor="let lugar of obtenerLugares()" [value]="lugar">{{lugar}}</option>
+</select>
+
+
+<h1>Proximos Eventos</h1>
+ <app-evento *ngFor="let evento of obtenerEventosActuales()" [evento]="evento" (guardarCambios)="guardarEvento($event)"></app-evento> 
+<div *ngIf="obtenerEventosActuales().length==0">
+  No hay eventos
+</div>
+
+
+<h1>Eventos Pasados</h1>
+
+<app-evento *ngFor="let evento of obtenerEventosPasados()" [evento]="evento" (guardarCambios)="guardarEvento($event)"></app-evento>
+<div *ngIf="obtenerEventosPasados().length==0">
+  No hay eventos
+</div>
