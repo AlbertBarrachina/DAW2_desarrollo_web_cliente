@@ -46,7 +46,8 @@ export class AppComponent implements OnInit {
   }
 
   guardarEvento(evento: Evento) {
-    
+    this.eventos.push(evento);
+    console.log("Uploading Evento:", evento);
   }
 
 }
