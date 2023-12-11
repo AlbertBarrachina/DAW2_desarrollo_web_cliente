@@ -1,0 +1,18 @@
+<h1>Por favor, haz bien la página</h1>
+<h3>Nuh uh :3</h3>
+<div>
+    <h3>Pendientes</h3>
+    <app-tarea *ngFor="let tarea of obtenerPendientes()" [tarea]="tarea"></app-tarea>
+</div>
+<div>
+    <h3>
+        Progreso
+    </h3>
+    <app-tarea *ngFor="let tarea of obtenerProgreso()" [tarea]="tarea"></app-tarea>
+</div>
+<div>
+    <h3>
+        Finalizadas
+    </h3>
+    <app-tarea *ngFor="let tarea of obtenerFinalizadas()" [tarea]="tarea"></app-tarea>
+</div>
