@@ -7,12 +7,28 @@ import { Tarea } from '../models/tarea-model';
   styleUrls: ['./tarea.component.css']
 })
 export class TareaComponent implements OnInit {
-  @Input() tarea:Tarea;
-  constructor() { 
-    this.tarea = { lista: "", img: "", titulo: "", usuarios: [], fechaFin: new Date()};
+  @Input() tarea: Tarea;
+  @Input() listas: string[] = [];
+  constructor() {
+    this.tarea = { lista: "", img: "", titulo: "", usuarios: [], fechaFin: new Date() };
   }
 
   ngOnInit(): void {
+  }
+
+  getClasse() {
+    let currentDate = new Date().getTime();
+    let tareaFechaFin = new Date(this.tarea?.fechaFin ?? currentDate).getTime();
+    const isRojo = this.tarea.lista !== this.listas[2] && tareaFechaFin < currentDate;
+    const isVerde = this.tarea.lista === this.listas[2] && tareaFechaFin < currentDate;
+    const isNaranja = ((currentDate - tareaFechaFin) < 24 * 60 * 60 * 1000 && (currentDate - tareaFechaFin) > 0);
+      
+    return {
+      'gris': true,
+      'rojo': isRojo,
+      'verde': isVerde,
+      'naranja': isNaranja
+    };
   }
 
 }
