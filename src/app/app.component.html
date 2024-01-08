@@ -4,17 +4,20 @@
             Pendientes
         </h3>
         <app-tarea *ngFor="let tarea of obtenerPendientes()" [tarea]="tarea" [listas]="listas"></app-tarea>
+        <app-tarea-form [listas]="listas"></app-tarea-form>
     </div>
     <div class="categoria">
         <h3>
             Progreso
         </h3>
         <app-tarea *ngFor="let tarea of obtenerProgreso()" [tarea]="tarea" [listas]="listas"></app-tarea>
+        <app-tarea-form [listas]="listas"></app-tarea-form>
     </div>
     <div class="categoria">
         <h3>
             Finalizadas
         </h3>
         <app-tarea *ngFor="let tarea of obtenerFinalizadas()" [tarea]="tarea" [listas]="listas"></app-tarea>
+        <app-tarea-form [listas]="listas"></app-tarea-form>
     </div>
 </div>

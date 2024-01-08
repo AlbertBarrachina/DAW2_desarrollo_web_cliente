@@ -12,7 +12,7 @@
 .categoria{
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: rgb(240, 238, 238);
     border-radius: 1pc;
     padding: 2pc;
     row-gap: 2pc;

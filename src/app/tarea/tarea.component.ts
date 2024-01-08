@@ -10,7 +10,7 @@ export class TareaComponent implements OnInit {
   @Input() tarea: Tarea;
   @Input() listas: string[] = [];
   constructor() {
-    this.tarea = { lista: "", img: "", titulo: "", usuarios: [], fechaFin: new Date() };
+    this.tarea = {id: 0, lista: "", img: "", titulo: "", usuarios: [], fechaFin: new Date() };
   }
 
   ngOnInit(): void {
