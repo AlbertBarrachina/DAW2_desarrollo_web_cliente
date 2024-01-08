@@ -18,9 +18,9 @@ export class AppComponent {
   constructor() {
     const tareasJSON: string = `{
       "tareas": [
-        { "lista": "${k_FINALIZADAS_LISTA}", "img": "https://picsum.photos/300/200", "titulo": "Tarea 1: Diseño UI", "usuarios": [{"img": "https://picsum.photos/300/300", "alt": "Usuario"}], "fechaFin": "2019-01-16" },
-        { "lista": "${k_PROGRESO_LISTA}", "img": "https://picsum.photos/300/200", "titulo": "Tarea 2: Diseño de todo el Backend", "usuarios": [], "fechaFin": "2022-11-09" },
-        { "lista": "${k_PENDIENTES_LISTA}", "img": null, "titulo": "Tarea 3: Diseño de la base de datos", "usuarios": [{"img": "https://picsum.photos/300/300", "alt": "Usuario"}, {"img": "https://picsum.photos/300/300", "alt": "Usuario"}], "fechaFin": "2023-12-13" },
+        { "lista": "${k_FINALIZADAS_LISTA}", "img": "https://picsum.photos/300/200", "titulo": "Tarea 1: Diseño UI", "usuarios": [{"img": "https://picsum.photos/300/300", "alt": "Usuario"}], "fechaFin": "2024-01-7" },
+        { "lista": "${k_PROGRESO_LISTA}", "img": "https://picsum.photos/300/200", "titulo": "Tarea 2: Diseño de todo el Backend", "usuarios": [], "fechaFin": "2024-11-09" },
+        { "lista": "${k_PENDIENTES_LISTA}", "img": null, "titulo": "Tarea 3: Diseño de la base de datos", "usuarios": [{"img": "https://picsum.photos/300/300", "alt": "Usuario"}, {"img": "https://picsum.photos/300/300", "alt": "Usuario"}], "fechaFin": "2024-12-13" },
         { "lista": "${k_PENDIENTES_LISTA}", "img": null, "titulo": "Tarea 4: Implementar todo el Front-End", "usuarios": [], "fechaFin": null }
       ]
     }`;

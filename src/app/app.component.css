@@ -1,0 +1,22 @@
+.categorias{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    column-gap: 3pc;
+    text-align: center;
+}
+
+.categoria{
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    border-radius: 1pc;
+    padding: 2pc;
+    row-gap: 2pc;
+}
+.categoria>h3{
+  font-size: 1.5pc;
+}

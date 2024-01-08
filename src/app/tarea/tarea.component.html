@@ -1,9 +1,13 @@
 <div class="tarea">
-    <img [src]=tarea.img *ngIf="tarea.img"> 
+    <img [src]=tarea.img *ngIf="tarea.img" class="imagenPortada">
     <p>{{tarea.titulo}}</p>
-    <p [ngClass]="getClasse()" *ngIf="tarea.fechaFin">{{tarea.fechaFin}}</p>
-    <div *ngFor="let usuario of tarea.usuarios">
-        <img [src]=usuario.img  [alt]=usuario.alt class="usuario" *ngIf="usuario">
+    <div class="fecha-usuarios">
+        <p [ngClass]="getClasse()" *ngIf="tarea.fechaFin" class="fecha">{{tarea.fechaFin}}</p>
+        <div class="fecha-usuarios">
+            <div *ngFor="let usuario of tarea.usuarios">
+                <img [src]=usuario.img [alt]=usuario.alt class="usuario" *ngIf="usuario">
+            </div>
+        </div>
     </div>
-    
+
 </div>

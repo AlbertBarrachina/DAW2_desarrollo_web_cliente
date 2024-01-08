@@ -1,26 +1,48 @@
-.tarea{
+.tarea {
     border-radius: 1pc;
     background-color: rgb(211, 154, 68);
-}
-.usuario{
-    width: 5pc;
-    height: 5pc;
-    border-radius: 100%;
+    width: 20pc;
+    text-align: center;
+    overflow: hidden;
 }
 
-.gris{
+.imagenPortada{
+width: inherit;
+position: relative;
+margin-top: -10pc;
+}
+
+.fecha-usuarios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fecha{
+    padding: 0.5pc;
+    border-radius: 0.7pc;
+}
+
+.usuario {
+    width: 3pc;
+    height: 3pc;
+    border-radius: 100%;
+    margin-left: 1pc;
+}
+
+.gris {
     background-color: grey;
-    border-radius: 10%;
 }
-.rojo{
+
+.rojo {
     background-color: red;
-    border-radius: 10%;
 }
-.verde{
+
+.verde {
     background-color: green;
-    border-radius: 10%;
 }
-.naranja{
+
+.naranja {
     background-color: orange;
-    border-radius: 10%;
 }
