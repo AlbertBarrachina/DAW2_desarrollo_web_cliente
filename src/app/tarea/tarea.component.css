@@ -4,12 +4,17 @@
     width: 20pc;
     text-align: center;
     overflow: hidden;
+    box-shadow: 1px 1px 3px rgba(68, 68, 68, 0.452);
 }
 
-.imagenPortada{
-width: inherit;
-position: relative;
-margin-top: -10pc;
+.tarea:hover {
+    box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.596);
+}
+
+.imagenPortada {
+    width: inherit;
+    position: relative;
+    margin-top: -10pc;
 }
 
 .fecha-usuarios {
@@ -19,9 +24,15 @@ margin-top: -10pc;
     align-items: center;
 }
 
-.fecha{
+.fecha {
     padding: 0.5pc;
     border-radius: 0.7pc;
+}
+
+.iconoFecha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .usuario {
