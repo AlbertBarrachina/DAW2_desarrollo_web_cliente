@@ -1,53 +1,49 @@
-import { Component, OnInit } from '@angular/core';
-import { Evento } from './models/evento.model';
-import data from '../assets/data.json';
+import { Component, ViewChild } from '@angular/core';
+import { Tarea } from './models/tarea-model';
 
+const k_PENDIENTES_LISTA: string = "Pendientes";
+const k_PROGRESO_LISTA: string = "Progreso";
+const k_FINALIZADAS_LISTA: string = "Finalizadas";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
+  listas: string[] = [];
+  tareas: Tarea[];
+  tareaSeleccionada: Tarea | null = null;
+  formularioVisible = false;
+  constructor() {
+    const tareasJSON: string = `{
+      "tareas": [
+      { "id": 0, "lista": "${k_FINALIZADAS_LISTA}", "img":"https://picsum.photos/300/200", "titulo": "Tarea 1: Diseño UI", "usuarios": [{"email": "lponts@ilerna.com", "img":"https://picsum.photos/300/300", "nick": "Juan", "alt": "Usuario"}], "fechaFin": "2019-01-16" },
+      { "id": 1, "lista": "${k_PROGRESO_LISTA}", "img":"https://picsum.photos/300/200", "titulo": "Tarea 2: Diseño de todo el Backend", "usuarios": [], "fechaFin": "2022-11-09" },    
+      { "id": 2, "lista": "${k_PENDIENTES_LISTA}", "img": null, "titulo": "Tarea 3: Diseño de la base de datos", "usuarios": [{"email": "jdominguez@ilerna.com", "img": "https://picsum.photos/200/200", "nick": "Jose", "alt": "Usuario"}, { "email": "lponts@ilerna.com", "img": "https://picsum.photos/100/100", "nick": "Laura", "alt": "Usuario"}], "fechaFin": "2022-11-16" },
+      { "id": 3, "lista": "${k_PENDIENTES_LISTA}", "img": null, "titulo": "Tarea 4: Implementar todo el Front-End", "usuarios": [], "fechaFin": null }
+      ]}`;
 
-  eventos: Evento[] = [];
-  filtro: string = '';
+    const tareasDict: any = JSON.parse(tareasJSON);
+    this.tareas = tareasDict['tareas'];
 
-
-  ngOnInit() {
-    // Cargamos el fichero JSON
-    const json: any = data;
-
-    // Guardamos el fichero cargado en el array de Eventos
-    this.eventos = json;
-
-    // Convertimos las fechas a tipo Date
-    this.eventos.map((value) => value.fecha = new Date(value.fecha));
+    this.listas.push(k_PENDIENTES_LISTA);
+    this.listas.push(k_PROGRESO_LISTA);
+    this.listas.push(k_FINALIZADAS_LISTA);
   }
-
-  // Obtiene los eventos cuya fecha aún no ha vencido y que coincidan con la localización seleccionada
-  obtenerEventosActuales(): Evento[] {
-    return this.eventos.filter(value => value.fecha >= new Date() && (value.direccion.toLowerCase()).indexOf(this.filtro.toLowerCase()) != -1)
+  obtenerPendientes(): Tarea[] {
+    return this.tareas.filter(value => value.lista.toLowerCase() == k_PENDIENTES_LISTA.toLowerCase());
   }
-
-  // Obtiene los eventos cuya fecha ya haya vencido y que coincidan con la localización seleccionada
-  obtenerEventosPasados(): Evento[] {
-    return this.eventos.filter(value => value.fecha < new Date() && (value.direccion.toLowerCase()).indexOf(this.filtro.toLowerCase()) != -1)
+  obtenerProgreso(): Tarea[] {
+    return this.tareas.filter(value => value.lista.toLowerCase() == k_PROGRESO_LISTA.toLowerCase());
   }
-
-  // Obtenemos una lista de todos los lugares de los diferentes eventos sin repeticiones
-  obtenerLugares(): string[] {
-
-    // Primero nos quedamos solamente con las direcciones de todos los eventos
-    let direcciones: string[] = this.eventos.map(value => value.direccion);
-
-    // Filtramos todas las direcciones de manera que si la posición del "value" no coincide con el número de "idx", es una repetición
-    return direcciones.filter((value: string, idx: number) => direcciones.indexOf(value) == idx);
+  obtenerFinalizadas(): Tarea[] {
+    return this.tareas.filter(value => value.lista.toLowerCase() == k_FINALIZADAS_LISTA.toLowerCase());
   }
-
-  guardarEvento(evento: Evento) {
-    this.eventos.push(evento);
-    console.log("Uploading Evento:", evento);
+  toggleFormulario(tarea: Tarea | null): void {
+    if (tarea) {
+      this.tareaSeleccionada = tarea;
+    }
+    this.formularioVisible = !this.formularioVisible;
   }
-
 }

@@ -1,0 +1,37 @@
+.categorias {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  column-gap: 2pc;
+  text-align: center;
+}
+
+.categoria {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(240, 238, 238);
+  border-radius: 1pc;
+  padding: 2pc;
+  row-gap: 1pc;
+}
+
+.categoria>h3 {
+  font-size: 1.5pc;
+}
+
+.tarea {
+  border-radius: 1pc;
+  background-color: rgb(255, 200, 117);
+  width: 20pc;
+  height: 2pc;
+  text-align: center;
+  border-color: transparent;
+  box-shadow: 1px 1px 3px rgba(68, 68, 68, 0.452);
+}
+
+.tarea:hover {
+  box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.596);
+}

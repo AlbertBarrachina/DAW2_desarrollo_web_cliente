@@ -1,0 +1,78 @@
+.tarea {
+    border-radius: 1pc;
+    background-color: rgb(255, 200, 117);
+    width: 20pc;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px rgba(68, 68, 68, 0.452);
+}
+
+.tarea:hover {
+    box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.596);
+}
+
+.imagenPortada {
+    width: inherit;
+    position: relative;
+    margin-top: -10pc;
+}
+
+.fecha-usuarios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fecha {
+    padding: 0.5pc;
+    border-radius: 0.7pc;
+}
+
+.iconoFecha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.usuario {
+    width: 3pc;
+    height: 3pc;
+    border-radius: 100%;
+    margin-left: 1pc;
+}
+
+.gris {
+    background-color: grey;
+}
+
+.rojo {
+    background-color: red;
+}
+
+.verde {
+    background-color: green;
+}
+
+.naranja {
+    background-color: orange;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(34, 21, 21);
+    color: #fff;
+    white-space: nowrap;
+    border-radius: 16px;
+    padding: 5px;
+}

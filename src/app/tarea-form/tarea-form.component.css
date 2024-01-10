@@ -1,0 +1,37 @@
+.formulario {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30pc;
+    height: 30pc;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1pc;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.801);
+    border-radius: 2pc;
+    padding: 1%;
+    border-color: black;
+    text-align: left;
+
+}
+
+input,
+label {
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.guardar {
+    height: 2pc;
+    background-color: darkblue;
+    color: white;
+}
+
+.cancelar {
+    height: 2pc;
+    background-color: orangered;
+    color: white;
+}
