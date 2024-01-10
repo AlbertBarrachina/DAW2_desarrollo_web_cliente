@@ -1,15 +1,18 @@
 <div>
     <form class="formulario">
-        <input type="text" name="titulo" placeholder="Titulo">
+        <input type="text" name="titulo" placeholder="Titulo" [value]="tarea.titulo" required *ngIf="tarea">
+        <input type="text" name="titulo" placeholder="Titulo" required *ngIf="!tarea">
         <label for="lista">Lista</label>
-        <select name="lista" id="">
+        <select name="lista" id="lista" required>
+            <option value="">---</option>
             <option [value]="llista" *ngFor="let llista of listas">{{llista}}</option>
         </select>
         <label for="FechaFin">Fecha fin</label>
-        <input type="date" name="FechaFin" placeholder="MM/DD/YYYY">
+        <input type="date" name="FechaFin" placeholder="MM/DD/YYYY" *ngIf="!tarea">
+        <input type="date" name="FechaFin" placeholder="MM/DD/YYYY" [value]="tarea.fechaFin" *ngIf="tarea">
         <input type="url" name="imagen" placeholder="URL imagen">
         <button>+</button>
-        <input type="button" value="Guardar">
-        <input type="button" value="Cancelar">
+        <input type="button" value="Guardar" (click)="formularioToggle()" class="guardar">
+        <input type="button" value="Cancelar" (click)="formularioToggle()" class="cancelar">
     </form>
 </div>

@@ -1,10 +1,10 @@
-<div class="categorias">
+<div class="categorias" *ngIf="!formularioVisible">
     <div class="categoria">
         <h3>
             Pendientes
         </h3>
-        <app-tarea *ngFor="let tarea of obtenerPendientes()" [tarea]="tarea" [listas]="listas"></app-tarea>
-        <button class="tarea">
+        <app-tarea *ngFor="let tarea of obtenerPendientes()" [tarea]="tarea" [listas]="listas" (click)="toggleFormulario(tarea)"></app-tarea>
+        <button class="tarea" (click)="toggleFormulario(tareaSeleccionada)">
             + Añadir tarea nueva ...
         </button>
     </div>
@@ -12,8 +12,8 @@
         <h3>
             Progreso
         </h3>
-        <app-tarea *ngFor="let tarea of obtenerProgreso()" [tarea]="tarea" [listas]="listas"></app-tarea>
-        <button class="tarea">
+        <app-tarea *ngFor="let tarea of obtenerProgreso()" [tarea]="tarea" [listas]="listas" (click)="toggleFormulario(tarea)"></app-tarea>
+        <button class="tarea" (click)="toggleFormulario(tareaSeleccionada)">
             + Añadir tarea nueva ...
         </button>
     </div>
@@ -21,10 +21,12 @@
         <h3>
             Finalizadas
         </h3>
-        <app-tarea *ngFor="let tarea of obtenerFinalizadas()" [tarea]="tarea" [listas]="listas"></app-tarea>
-            <button class="tarea" >
-                + Añadir tarea nueva ...
-            </button>
+        <app-tarea *ngFor="let tarea of obtenerFinalizadas()" [tarea]="tarea" [listas]="listas" (click)="toggleFormulario(tarea)"></app-tarea>
+        <button class="tarea" (click)="toggleFormulario(tareaSeleccionada)">
+            + Añadir tarea nueva ...
+        </button>
     </div>
-    <app-tarea-form [listas]="listas"></app-tarea-form>
+</div>
+<div *ngIf="formularioVisible">
+    <app-tarea-form [listas]="listas" [tarea]="tareaSeleccionada"></app-tarea-form>
 </div>

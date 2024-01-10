@@ -1,0 +1,28 @@
+<div class="card-container">
+    <div class="card">
+        <h1 *ngIf="!editando">{{ evento.titulo }}</h1>
+        <div *ngIf="editando">
+            <label for="titulo">Título</label> <br>
+            <input id="titulo" type="text" [(ngModel)]="evento.titulo">
+          </div>
+        <h2 *ngIf="!editando">{{ evento.artista }}</h2>
+        <div *ngIf="editando">
+            <label for="artista">Artista</label> <br>
+            <input id="artista" type="text" [(ngModel)]="evento.artista">
+          </div>
+        <h3>{{ evento.fecha | date }} - {{ evento.fecha | date: 'HH:MM' }}h</h3>
+        <h3 *ngIf="!editando">{{ evento.direccion }}</h3>
+        <div *ngIf="editando">
+            <label for="direccion">Direccion</label> <br>
+            <input id="direccion" type="text" [(ngModel)]="evento.direccion">
+          </div>
+        <h2 *ngIf="!editando">{{ (evento.precio != 0) ? (evento.precio | currency) : "Gratis !!" }}</h2>
+        <div *ngIf="editando">
+            <label for="precio">Precio</label> <br>
+            <input id="precio" type="number" [(ngModel)]="evento.precio">
+          </div>
+        <button type="button" 
+        class="material-symbols-outlined"
+        (click)="cambiarEdicion()">{{ editando ? 'save' : 'edit' }}</button>
+    </div>
+</div>

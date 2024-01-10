@@ -13,8 +13,8 @@ const k_FINALIZADAS_LISTA: string = "Finalizadas";
 export class AppComponent {
   listas: string[] = [];
   tareas: Tarea[];
-  router: any;
-
+  tareaSeleccionada: Tarea | null = null;
+  formularioVisible = false;
   constructor() {
     const tareasJSON: string = `{
       "tareas": [
@@ -39,5 +39,11 @@ export class AppComponent {
   }
   obtenerFinalizadas(): Tarea[] {
     return this.tareas.filter(value => value.lista.toLowerCase() == k_FINALIZADAS_LISTA.toLowerCase());
+  }
+  toggleFormulario(tarea: Tarea | null): void {
+    if (tarea) {
+      this.tareaSeleccionada = tarea;
+    }
+    this.formularioVisible = !this.formularioVisible;
   }
 }

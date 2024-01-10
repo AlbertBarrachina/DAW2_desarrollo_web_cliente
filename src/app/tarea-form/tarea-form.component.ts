@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Tarea } from '../models/tarea-model';
 
 @Component({
   selector: 'app-tarea-form',
@@ -7,10 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TareaFormComponent implements OnInit {
   @Input() listas: string[] = [];
-  viewContainerRef: any;
-  constructor() { }
+  @Input() tarea: Tarea | null;
+  @Output() guardarCambios : EventEmitter<Tarea> = new EventEmitter<Tarea>();
+
+  constructor() {
+    this.tarea = {id: 0, lista: "", img: "", titulo: "", usuarios: [], fechaFin: new Date() };
+  }
 
   ngOnInit(): void {
   }
 
+  formularioToggle(){
+    this.guardarCambios.emit();
+  }
 }

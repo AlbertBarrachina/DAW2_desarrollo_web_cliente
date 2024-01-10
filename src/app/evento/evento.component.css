@@ -1,0 +1,23 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px black solid;
+    width: 250px;
+    height: fit-content;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+  }
+  
