@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TareaFormComponent implements OnInit {
   @Input() listas: string[] = [];
+  viewContainerRef: any;
   constructor() { }
 
   ngOnInit(): void {

@@ -30,5 +30,5 @@ export class TareaComponent implements OnInit {
       'naranja': isNaranja
     };
   }
-
+  
 }

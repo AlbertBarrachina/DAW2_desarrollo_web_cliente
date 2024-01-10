@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Tarea } from './models/tarea-model';
 
 const k_PENDIENTES_LISTA: string = "Pendientes";
@@ -11,9 +11,9 @@ const k_FINALIZADAS_LISTA: string = "Finalizadas";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   listas: string[] = [];
   tareas: Tarea[];
+  router: any;
 
   constructor() {
     const tareasJSON: string = `{

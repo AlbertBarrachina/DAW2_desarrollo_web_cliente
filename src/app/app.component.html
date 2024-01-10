@@ -22,8 +22,9 @@
             Finalizadas
         </h3>
         <app-tarea *ngFor="let tarea of obtenerFinalizadas()" [tarea]="tarea" [listas]="listas"></app-tarea>
-        <button class="tarea">
-            + Añadir tarea nueva ...
-        </button>
+            <button class="tarea" >
+                + Añadir tarea nueva ...
+            </button>
     </div>
+    <app-tarea-form [listas]="listas"></app-tarea-form>
 </div>
