@@ -1,0 +1,16 @@
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.foto-container {
+  width: 350px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}

@@ -1,0 +1,23 @@
+<app-foto-form (nuevaFotoEvent)="crearFoto($event)">
+
+</app-foto-form>
+
+<select name="tipo" id="tipo" [(ngModel)]="categoria">
+  <option value=""></option>
+  <option *ngFor="let categoria of conseguirCategorias()" [value]="categoria">{{categoria}}</option>
+</select>
+
+<div class="list-container">
+  <div *ngFor="let foto of obtenerFotosPorCategoria()" class="foto-container">
+
+    <h1>{{ foto.titulo | uppercase }}</h1>
+    <h3>{{ foto.fecha | date:"MMMM dd, yyyy HH:MM" }}</h3>
+    <img [src]="foto.imagen" alt="Imagen de muestra"/>
+    <p>{{ foto.descripcion }}</p>
+
+    <p><strong>{{foto.precio | currency: '€'}}</strong></p>
+
+    <button type="button" class="material-symbols-outlined">edit</button>
+
+  </div>
+</div>

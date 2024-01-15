@@ -1,0 +1,12 @@
+<form [formGroup]="fotoForm" (ngSubmit)="guardarFoto()">
+    <input type="text" name="id" id="" placeholder="ID" formControlName="id">
+    <input type="text" name="titulo" id="" placeholder="titulo" formControlName="titulo">
+    <input type="text" name="imagen" id="" placeholder="imagen" formControlName="imagen">
+    <input type="text" name="categoria" id="" placeholder="categoria" formControlName="categoria">
+    <input type="text" name="descripcion" id="" placeholder="descripcion" formControlName="descripcion">
+    <input type="date" name="fecha" id="" placeholder="fecha" formControlName="fecha">
+    <input type="text" name="precio" id="" placeholder="precio" formControlName="precio">
+    <button type="submit">
+        Save
+    </button>
+</form>
