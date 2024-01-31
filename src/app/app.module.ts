@@ -1,33 +1,44 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {ErrorComponent} from './paginas/error/error.component';
-import {BienvenidaComponent} from './paginas/bienvenida/bienvenida.component';
-import {SobreMiComponent} from './paginas/sobre-mi/sobre-mi.component';
-import {ArticulosComponent} from './paginas/articulos/articulos.component';
-import {ArticuloComponent} from './paginas/articulos/articulo/articulo.component';
-import {ArticuloDetalleComponent} from './paginas/articulos/articulo-detalle/articulo-detalle.component';
-import { ArticuloListaComponent } from './paginas/articulos/articulo-lista/articulo-lista.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+// Components
+import {ListaUsuariosComponent} from './lista-usuarios/lista-usuarios.component';
+
+// Angular Material
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatCardModule} from "@angular/material/card";
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorComponent,
-    BienvenidaComponent,
-    SobreMiComponent,
-    ArticulosComponent,
-    ArticuloComponent,
-    ArticuloDetalleComponent,
-    ArticuloListaComponent
+    ListaUsuariosComponent,
+    RegisterComponent,
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+
+    // Angular Material
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,3 @@
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.currentPage {
-  font-weight: bold;
-  font-size: large;
+.nav-button {
+  margin-right: 10px;
 }
