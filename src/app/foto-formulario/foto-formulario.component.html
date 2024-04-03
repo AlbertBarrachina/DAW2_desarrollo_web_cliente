@@ -2,14 +2,14 @@
 <label for="">link de la foto</label>
 <input type="url" formControlName="photo">
 <label for="">Cuantas columnas tiene</label>
-<input type="number" min="1" max="100" formControlName="cols">
+<input type="number" min="1" max="100" formControlName="cols" class="numeritos">
 <label for="">Cuantar lineas tiene</label>
-<input type="number" min="1" max="100" formControlName="rows">
-<button type="submit" [disabled]="!FotoForm.valid">
+<input type="number" min="1" max="100" formControlName="rows" class="numeritos">
+<button type="submit" [disabled]="!FotoForm.valid" [ngClass]="{ 'Nope': !FotoForm.valid, 'guardar': FotoForm.valid }" >
     Guardar
 </button>
 
 </form>
-<button (click)="Cancelar()">
+<button (click)="Cancelar()" class="cancelar">
     Cancelar
 </button>

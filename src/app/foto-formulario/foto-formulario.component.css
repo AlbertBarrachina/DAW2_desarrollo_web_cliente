@@ -5,11 +5,60 @@ form {
     transform: translate(-50%,-50%);
     background-color: lightgray;
     border-radius: 1em;
-    min-height: 50%;
-    min-width: 40%;
+    min-height: 20vh;
+    min-width: 40vw;
     text-align: center;
-    padding: 5em;
+    padding: 3em;
     display: flex;
     flex-direction: column;
     gap:1em;
+    box-shadow: 1px 1px 10px 1px black;
+  }
+  form>input{
+    height: 2em;
+    border-radius: 1em;
+    padding-left: 10px;
+    padding-right:10px;
+    border: 1px solid gray;
+  }
+  .numeritos{
+    margin: auto;
+    width: 4em;
+    height: 3em;
+    border-radius: 1em;
+    padding-left: 10px;
+    padding-right:10px;
+    text-align: center;
+  }
+
+  .cancelar{
+    margin: 1em;
+    font-weight: 900;
+    color: rgb(192, 4, 4);
+    background-color:lightyellow;
+    width: 10em;
+    height: 2em;
+    border-radius: 1em;
+  }
+  .guardar{
+    cursor: cell;
+    font-weight: 900;
+    color: rgb(18, 0, 99);
+    background-color:lightblue;
+    width: 6em;
+    height: 2em;
+    border-radius: 1em;
+    margin:auto;
+    font-size:1.5em;
+  }
+
+  .Nope{
+    cursor: no-drop;
+    color: rgb(74, 69, 97);
+    background-color:rgb(173, 187, 192);
+    width: 6em;
+    height: 2em;
+    border-radius: 1em;
+    margin:auto;
+    font-size:1.5em;
   }
