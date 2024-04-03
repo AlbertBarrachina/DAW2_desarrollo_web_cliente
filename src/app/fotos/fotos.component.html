@@ -1,0 +1,16 @@
+<div *ngIf="!isFormVisible">
+<mat-grid-list [cols]="maxCols" rowHeight="100px">
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows">
+    <img [src]="tile.photo">
+  </mat-grid-tile>
+</mat-grid-list>
+
+<button class="floating-button" mat-fab color="primary" (click)="toggleForm()">
+  <mat-icon>add</mat-icon>
+</button>  
+</div>
+
+<app-foto-formulario (ToggleForm)="toggleForm()" (CrearFoto)="addNewPhoto($event)" *ngIf="isFormVisible"></app-foto-formulario>
